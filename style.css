@@ -1,0 +1,128 @@
+:root {
+    --bg-color: #f4f7f6;
+    --text-color: #333333;
+    --card-bg: #ffffff;
+    --border-color: #cccccc;
+    --primary-color: #0066cc;
+    --selected-bg: #e6f0fa;
+    --error-color: #d9534f;
+}
+
+body.dark-theme {
+    --bg-color: #1a1a1a;
+    --text-color: #f0f0f0;
+    --card-bg: #2d2d2d;
+    --border-color: #444444;
+    --primary-color: #3399ff;
+    --selected-bg: #1c3b57;
+    --error-color: #ff6b6b;
+}
+
+body {
+    font-family: Arial, sans-serif;
+    background-color: var(--bg-color);
+    color: var(--text-color);
+    margin: 0;
+    padding: 20px;
+    transition: background 0.3s, color 0.3s;
+}
+
+header {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    border-bottom: 2px solid var(--border-color);
+    padding-bottom: 10px;
+    margin-bottom: 20px;
+}
+
+section {
+    background-color: var(--card-bg);
+    border: 1px solid var(--border-color);
+    border-radius: 8px;
+    padding: 20px;
+    margin-bottom: 20px;
+    box-shadow: 0 2px 4px rgba(0,0,0,0.05);
+}
+
+.cards-container {
+    display: flex;
+    gap: 15px;
+    flex-wrap: wrap;
+}
+
+.event-card {
+    border: 1px solid var(--border-color);
+    border-radius: 6px;
+    padding: 15px;
+    width: 250px;
+    background-color: var(--card-bg);
+    cursor: pointer;
+    transition: transform 0.2s, background-color 0.2s;
+}
+
+/* Требуемый класс для выбранной карточки */
+.event-card.selected-event {
+    border-color: var(--primary-color);
+    background-color: var(--selected-bg);
+    transform: scale(1.02);
+}
+
+.form-group {
+    margin-bottom: 15px;
+}
+
+.form-group label {
+    display: block;
+    margin-bottom: 5px;
+    font-weight: bold;
+}
+
+.form-group input[type="text"],
+.form-group input[type="email"] {
+    width: 100%;
+    padding: 8px;
+    box-sizing: border-box;
+    border: 1px solid var(--border-color);
+    border-radius: 4px;
+    background-color: var(--card-bg);
+    color: var(--text-color);
+}
+
+.input-error {
+    border-color: var(--error-color) !important;
+}
+
+.error-msg {
+    color: var(--error-color);
+    font-size: 12px;
+    margin-top: 4px;
+}
+
+.char-counter {
+    font-size: 11px;
+    color: gray;
+    margin-top: 2px;
+    display: block;
+}
+
+button {
+    padding: 10px 15px;
+    background-color: var(--primary-color);
+    color: white;
+    border: none;
+    border-radius: 4px;
+    cursor: pointer;
+}
+
+button:hover {
+    opacity: 0.9;
+}
+
+.result-item, .guest-card {
+    border: 1px dashed var(--border-color);
+    padding: 10px;
+    margin-top: 10px;
+    border-radius: 4px;
+    background-color: var(--card-bg);
+}
